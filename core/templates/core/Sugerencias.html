@@ -100,8 +100,7 @@
 </head>
 <body>
   {%load static%}
-    <video sourse src="{% static 'video/pro.mp4'%}" autoplay loop>   
-    </video>
+    <video sourse src="{% static 'video/pro.mp4'%}" autoplay loop></video>
     <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #391d72;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
             <span class="navbar-toggler-icon"></span>
@@ -138,35 +137,22 @@
     </nav>  
 
       <!--formulario-->
-      <section class="form-login">
-        <h5>Regístrate</h5>
-        <form id="mi-formulario" action="Pagina principal.html">
-          <label style="color: aliceblue;">Nombre de Usuario: </label>
-          <input type="text"  required placeholder="Nombre de Usuario" class="controls" type="text" name="usuario" value="">
-          <br>
-          <label style="color: aliceblue;">Correo Electrónico: </label>
-          <input type="text" name="email" required placeholder="Nombre@dominio.cl" class="controls" type="text"  value="">
-          <br>
-          <label style="color: aliceblue;">Teléfono: </label>
-          <input type="text" name="fono" minlength="9" required class="controls" required placeholder="Número de Contacto">
-          <br>
-          <label for="opcion">Tipo de Sugerencia: </label>
-          <select required class="controls" id="opcions" name="opcion">
-              <option value="">- Selecciona una opción -</option>
-              <option value="1">Noticias</option>
-              <option value="2">Página web</option>
-              <option value="3">Errores</option>
-              <option value="4">Otro (coméntelo)</option>
-            </select>
-          <br>
-          <label for="Textosu">¿Qué nos quiere comentar?: </label><br>
-            <textarea required class="controls" type="text" id="textosu" minlenght="1" name="textosug" cols="30" rows="3" placeholder="Escriba aqui su sugerencia" onfocus="CambiaColor(this)"></textarea>
-          <br>
-          <input class="buttons" type="submit" name="" value="Ingresar">
-        </form>
-      </section>
-      <br><br><br><br>
-    </div>
+      <div class="form-login" style="height: 900px;">
+        <div class="row">
+            <h5 style="color: #ffffff; ">Creando Sugerencia</h5>
+        </div>
+        <div class="row">
+                <form method="POST" action="#" id="formulario">
+                    {%csrf_token%}            <!--graba, actualiza, controla la integridad de los datos-->
+                    <div class="form-group">
+                        {{formulario}}
+                    </div>               
+                        <div class="form-group">
+                        <input type="submit" class="btn btn-primary" id="enviar" value="Enviar"> 
+                    </div>
+                </form>
+        </div>
+    </div> 
     
     <footer class="footer" >
         <div class="container" >

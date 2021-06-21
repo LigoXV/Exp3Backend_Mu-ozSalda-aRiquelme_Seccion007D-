@@ -20,6 +20,7 @@
 </head>
 <body>
     {%load static%}
+    <video sourse src="{% static 'video/pro.mp4'%}" autoplay loop></video>
     <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #391d72">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
         <span class="navbar-toggler-icon"></span>
@@ -56,13 +57,14 @@
         </button>
       </div>
     </nav>
-    <div class="container">
+    
+    <div class="form-login" style="height: 900px;">
         <div class="row">
-            <h1>Modificando Sugerencia</h1>
+            <h5 style="color: #ffffff; margin-left: 50px;">Modificando Sugerencia</h5>
         </div>
         <div class="row">
                 <form method="POST" action="#" id="formulario">
-                    {%csrf_token%}            <!--graba, actualiza, controla la integridad de los datos-->>
+                    {%csrf_token%}            <!--graba, actualiza, controla la integridad de los datos-->
                     <div class="form-group">
                         {{form.as_table}}
                     </div>               
@@ -73,6 +75,7 @@
                 </form>
         </div>
     </div> 
+    <br><br><br>
     <footer class="footer" >
         <div class="container" >
           <div class="row">

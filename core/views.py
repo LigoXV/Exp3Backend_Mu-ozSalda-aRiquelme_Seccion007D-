@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Sugerencias
-from .forms import SugerenciasForm
+from .forms import SugerenciasForm, creaSugerenciasForm
 
 # Create your views here.
 def paginaprincipal(request):
@@ -10,7 +10,21 @@ def galeria(request):
     return render(request, 'Galeria de fotos.html')
 
 def sugerencias(request):
-    return render(request, 'core/Sugerencias.html')
+    if request.method=='GET':
+        formulario=SugerenciasForm()
+        contexto={
+            'formulario':formulario
+        }
+    else:
+        formulario=SugerenciasForm(request.POST)
+        contexto={
+            'formulario':formulario
+        }
+        if formulario.is_valid:
+            formulario.save()
+            return redirect('crud')
+
+    return render(request, 'core/Sugerencias.html', {'formulario':formulario})
 
 def crud(request):
     sugerencia=Sugerencias.objects.all()
