@@ -48,8 +48,11 @@
           <a class="nav-link" href="Registro.html" style="color: aliceblue;"> Registrarse</a> 
           </li>    
           <li class="nav-item">
-          <a class="nav-link" href="{% url 'sugerencias'%}" style="color: aliceblue;">Sugerencias</a>
-          </li>           
+          <a class="nav-link" href="{% url 'sugerencias'%}" style="color: aliceblue;"> Crear Sugerencias</a>
+          </li> 
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'crud'%}" style="color: aliceblue;">Lista Sugerencias</a>
+            </li>             
       </ul>
       <button class="switch navbar-nav ml-auto" id="switch" onclick="modark()"  >
         <span1 style="width: 30px; height: 30px; line-height: 30px; background: none; display: block; color: #ffffff;"><i class="fas fa-sun"></i></span1>
